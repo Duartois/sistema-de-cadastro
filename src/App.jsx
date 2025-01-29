@@ -1,10 +1,14 @@
-import  { BrowserRouter } from 'react-router-dom'
+import  { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 
 function App() {
     
   return (
     <div>
-      <h1>Cadastro</h1>
+      <BrowserRouter>
+      <Routes>
+        
+      </Routes>
+      </BrowserRouter>
 
     </div>
   )
