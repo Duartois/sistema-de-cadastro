@@ -14,26 +14,16 @@ Este repositório contém a interface frontend para uma API de cadastro, desenvo
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/Duartois/sistema-de-cadastro.git
    ```
 2. Acesse a pasta do projeto:
    ```bash
-   cd nome-do-projeto
+   cd sistema-de-cadastro
    ```
 3. Instale as dependências:
    ```bash
    npm install
    ```
-
-## Configuração do Ambiente
-
-Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis:
-
-```env
-REACT_APP_API_URL=http://localhost:5000
-```
-
-Substitua `http://localhost:5000` pela URL do backend.
 
 ## Executando o Projeto
 
@@ -41,7 +31,7 @@ Para iniciar o servidor de desenvolvimento:
 ```bash
 npm run dev
 ```
-O projeto estará disponível em `http://localhost:5173` (ou a porta configurada no seu ambiente).
+O projeto estará disponível em `http://localhost` (ou a porta configurada no seu ambiente).
 
 ## Funcionalidades
 
