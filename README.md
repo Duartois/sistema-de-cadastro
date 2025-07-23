@@ -1,59 +1,51 @@
-# Frontend para API de Cadastro
+# 📋 Cadastro App – Frontend React + Tailwind + JWT Auth
 
-Este repositório contém a interface frontend para uma API de cadastro, desenvolvida em React. O projeto inclui conexão com o backend, autenticação via JWT, envio e recebimento de dados da API, uso de rotas públicas e privadas, e estilização com Tailwind CSS.
+A modern and responsive frontend interface built in **React** with **TailwindCSS**, connected to a backend API with secure **JWT authentication**. It features protected/private routes, clean architecture, and seamless communication with the backend using **Axios**.
 
-## Tecnologias Utilizadas
+## 🧠 Tech Stack
 
-- **React** - Biblioteca para construção da interface do usuário
-- **React Router** - Gerenciamento de rotas
-- **Axios** - Requisições HTTP para a API
-- **Tailwind CSS** - Estilização do frontend
-- **JWT (JSON Web Token)** - Autenticação e gerenciamento de sessão
+- ⚛️ **React** – Component-based UI
+- 🔐 **JWT** – JSON Web Token for secure session handling
+- 💨 **TailwindCSS** – Utility-first CSS framework
+- 📡 **Axios** – API communication
+- 🌐 **React Router** – Public and private route handling
 
-## Instalação
+---
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Duartois/sistema-de-cadastro.git
-   ```
-2. Acesse a pasta do projeto:
-   ```bash
-   cd sistema-de-cadastro
-   ```
-3. Instale as dependências:
-   ```bash
-   npm install
-   ```
+## 🛠️ Features
 
-## Executando o Projeto
+- ✅ Secure login system with JWT
+- ✅ Protected routes using context and token validation
+- ✅ Axios integration with environment-based `baseURL`
+- ✅ Clean UI built with TailwindCSS
+- ✅ Responsive design, mobile-first
+- ✅ Modular code structure
 
-Para iniciar o servidor de desenvolvimento:
+---
+
+## 🗂️ Project Structure
+
+/src
+├── components/ # UI elements and layout
+├── context/ # Auth context provider
+├── pages/ # Login, Dashboard, etc.
+├── services/ # Axios config and API calls
+├── App.jsx # Main app logic and routes
+├── main.jsx # Entry point
+└── index.css # Tailwind base styles
+
+---
+
+## ⚙️ Getting Started
+
 ```bash
+git clone https://github.com/Duartois/sistema-de-cadastro.git
+cd sistema-de-cadastro
+npm install
 npm run dev
+The app will run on http://localhost:5173 (or your Vite config port).
 ```
-O projeto estará disponível em `http://localhost` (ou a porta configurada no seu ambiente).
-
-## Funcionalidades
-
-### 1. Conexão com o Backend
-
-O frontend realiza chamadas à API utilizando **Axios**, facilitando o envio e recebimento de dados. Exemplo de requisição:
-
-```js
-import axios from 'axios';
-
-const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-});
-
-export default api;
-```
-
-### 2. Autenticação com JWT
-
-A autenticação é feita armazenando o token JWT no **localStorage** e utilizando um contexto para gerenciar o estado global do usuário.
-
-Exemplo de login:
+🔒 JWT Authentication Example
 
 ```js
 const login = async (email, senha) => {
@@ -61,42 +53,19 @@ const login = async (email, senha) => {
     const response = await api.post('/login', { email, senha });
     localStorage.setItem('token', response.data.token);
   } catch (error) {
-    console.error('Erro no login', error);
+    console.error('Login failed', error);
   }
 };
 ```
 
-### 3. Rotas Públicas e Privadas
+## 🌍 Use Cases
 
-As rotas privadas só são acessíveis se o usuário estiver autenticado. Exemplo de proteção de rota:
+Admin panels for internal tools
+User registration portals
+Any app requiring secure login and API communication
 
-```js
-import { Navigate } from 'react-router-dom';
+## 📬 Contact
 
-const PrivateRoute = ({ children }) => {
-  const token = localStorage.getItem('token');
-  return token ? children : <Navigate to="/login" />;
-};
-```
-
-### 4. Estilização com Tailwind CSS
-
-O projeto usa Tailwind CSS para estilização rápida e responsiva. Exemplo:
-
-```jsx
-<button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-  Entrar
-</button>
-```
-
-## Contribuição
-
-1. Fork este repositório
-2. Crie um branch para sua feature (`git checkout -b minha-feature`)
-3. Commit suas alterações (`git commit -m 'Adicionando nova feature'`)
-4. Envie para o repositório (`git push origin minha-feature`)
-5. Abra um Pull Request
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+GitHub: github.com/Duartois
+LinkedIn: linkedin.com/in/matheusduartegoncalves
+Email: your.email@example.com
